@@ -77,9 +77,6 @@ if __name__ == "__main__":
     if uploaded_file is not None:
         df = read_csv(uploaded_file)
         if st.button('Upload to Pinecone'):
-            load_dotenv()
-            file_path = "src/data/data/rclup.csv"
-            df = read_csv(file_path)
             document_chunks = text_to_docs(df)
 
             pinecone.init(api_key='8843c877-4c11-45c7-abd4-4403b88aa5c5',
